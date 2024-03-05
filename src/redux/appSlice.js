@@ -4,14 +4,7 @@ const appSlice = createSlice({
   name: "app",
   initialState: {
     modal: false,
-    products: [
-      {
-        name: "Fall Limited Edition Sneakers",
-        price: 125,
-        count: 4,
-        url: "/image-product-1.jpg",
-      },
-    ],
+    products: [],
     totalPrice: null,
   },
   reducers: {
