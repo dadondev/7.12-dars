@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../general/components/Header";
 import Main from "../Main/Main";
 import { useDispatch } from "react-redux";
@@ -9,6 +9,11 @@ const Home = () => {
   const handleClick = () => {
     dispatch(appSlice.actions.setModal(false));
   };
+  useEffect(() => {
+    document.body.addEventListener("click", (e) => {
+      dispatch(appSlice.actions.setModal(false));
+    });
+  }, []);
   return (
     <div
       className="h-full container mx-auto lg:max-w-[890px] xl:max-w-[1110px] sm:max-w-full lg:pb-[60px]"
