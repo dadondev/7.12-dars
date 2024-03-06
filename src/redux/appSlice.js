@@ -31,6 +31,9 @@ const appSlice = createSlice({
       state.products = state.products.filter((e) => e.url != payload);
       console.log(state.products);
     },
+    delPro(state, { payload }) {
+      state.products = state.products.filter((e) => e.name != payload);
+    },
   },
 });
 

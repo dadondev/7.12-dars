@@ -63,7 +63,11 @@ const Pricing = () => {
       count,
       url: "/image-product-1.jpg",
     };
-    dispatch(appSlice.actions.pushProduct(schema));
+    if (count > 0) {
+      dispatch(appSlice.actions.pushProduct(schema));
+    } else {
+      dispatch(appSlice.actions.delPro(schema.name));
+    }
   };
   const [count, setCount] = useState(0);
   return (
